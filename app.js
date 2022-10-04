@@ -1,5 +1,15 @@
 const express = require("express");
 const app = express();
+// Le package Mongoose facilite les interactions entre votre application Express et votre base de données MongoDB
+const mongoose = require("mongoose"); 
+
+mongoose
+  .connect(
+    "mongodb+srv://khomso:28081992Ks@cluster0.h9cvpcd.mongodb.net/?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log("Connexion à MongoDB réussie !"))
+  .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 app.use(express.json());
 
